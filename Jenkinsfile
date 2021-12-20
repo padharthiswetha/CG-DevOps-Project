@@ -36,7 +36,7 @@ pipeline {
     }  
   */
         
-  /*  
+  
      stage('Build and push Docker images..') {
       steps{
        sh "sudo docker image build -t $JOB_NAME:v1.$BUILD_ID /var/lib/jenkins/workspace/project/."
@@ -48,7 +48,6 @@ pipeline {
       }
   
   }
-  */
  }
 }
 /*
