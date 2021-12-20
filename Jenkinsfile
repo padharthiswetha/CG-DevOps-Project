@@ -44,7 +44,7 @@ pipeline {
        sh "sudo docker image tag $JOB_NAME:v1.$BUILD_ID padharthiswetha/$JOB_NAME:latest"
        sh "sudo docker image push padharthiswetha/$JOB_NAME:v1.$BUILD_ID"
        sh "sudo docker image push padharthiswetha/$JOB_NAME:latest"
-       sh "sudo docker image rmi $JOB_NAME:v1.$BUILD_ID salimadugu/$JOB_NAME:v1.$BUILD_ID padharthiswetha/$JOB_NAME:latest"
+       sh "sudo docker image rmi $JOB_NAME:v1.$BUILD_ID padharthiswetha/$JOB_NAME:v1.$BUILD_ID padharthiswetha/$JOB_NAME:latest"
       }
   
   }
