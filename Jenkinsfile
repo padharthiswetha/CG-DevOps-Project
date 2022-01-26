@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    properties([parameters([choice(choices: ['master feature'], description: 'select branch', name: 'Branch')])])
     stages {
        stage('Validate') {
             steps {
