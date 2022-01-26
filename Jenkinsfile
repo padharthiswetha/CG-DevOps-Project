@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+       stage('Setup parameters') {
+           steps {
+               script {properties([parameters([choice(choices: ['master feature'], description: 'select branch', name: 'Branch')])])}
+           }
+       }
        stage('Validate') {
             steps {
                 echo 'Validate Code'
