@@ -3,7 +3,7 @@ pipeline {
     stages {
        stage('Setup parameters') {
            steps {
-               script {properties([parameters([choice(choices: 'master\nfeature', description: 'select branch', name: 'Branch')])])}
+               script {properties([parameters([choice(choices: 'master\nfeature1', description: 'select branch', name: 'Branch')])])}
            }
        }
        stage('Validate') {
