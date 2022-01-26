@@ -1,3 +1,4 @@
+properties([parameters([choice(choices: [master/nfeature], description: 'Select branch ', name: 'Branch')])])
 pipeline {
     agent any
 
@@ -28,7 +29,7 @@ pipeline {
             }
        }
 
-*/          
+         
     
     
      stage('Build and push Docker images..') {
@@ -48,7 +49,7 @@ pipeline {
                 sh 'ansible-playbook depl.yml'
             }
         }
-        
+*/        
     }
 }
 
