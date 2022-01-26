@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+       stage('Setup parameters') {
+           steps {
+               script {properties([parameters([choice(choices: [master/nfeature], description: 'select branch', name: 'Branch')])])}
+           }
+       }
        stage('Validate') {
             steps {
                 echo 'Validate Code'
@@ -34,7 +39,7 @@ pipeline {
        }
 
     }  
-  */
+  
         
   
      stage('Build and push Docker images..') {
@@ -50,15 +55,15 @@ pipeline {
   }
  }
 }
-/*
+
         
         stage('Run ansible'){
             steps{
                 sh 'ansible-playbook depl.yml'
             }
         }
-        
+*/        
     }
 }
-*/
+
 
