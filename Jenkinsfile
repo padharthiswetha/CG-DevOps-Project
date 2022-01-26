@@ -1,4 +1,3 @@
-properties([parameters([choice(choices: [master/nfeature], description: 'Select branch ', name: 'Branch')])])
 pipeline {
     agent any
 
