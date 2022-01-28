@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy to Nexus') {
             steps {
                 echo ' Pushing artifact to Nexus repo'
-                sh 'sudo cd /var/lib/jenkins/workspace/project/'
+                sh 'cd /var/lib/jenkins/workspace/project/'
                 sh 'mvn deploy'
             }
         }
