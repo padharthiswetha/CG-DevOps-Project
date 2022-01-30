@@ -22,9 +22,7 @@ pipeline {
         stage('Sonar Analysis') {
             steps {
                 def mvnHome = tool name: 'maven-3' , type: 'maven'
-                withSonarQubeEnv('Sonar'){
-                sh "${mvnHome}/usr/share/maven 
-                }
+                withSonarQubeEnv('Sonar')
                 echo 'Sonar Analysis done: Results at Sonar Server'
             }
         }
