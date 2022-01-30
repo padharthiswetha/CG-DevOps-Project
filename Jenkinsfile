@@ -46,7 +46,7 @@ pipeline {
                ], 
                    credentialsId: 'nexus', 
                    groupId: 'com.web.cal',
-                   nexusUrl: 'http://3.16.188.156:8081',
+                   nexusUrl: '3.16.188.156:8081',
                    nexusVersion: 'nexus3',
                    protocol: 'http', 
                    repository: 'maven-nexus',
