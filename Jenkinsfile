@@ -35,21 +35,9 @@ pipeline {
         }
           stage('Deploy to Nexus') {
             steps {
-               nexusArtifactUploader artifacts: [
-                   [
-                       artifactId: 'WebAppCal', 
-                       classifier: '', 
-                       file: 'target/WebAppCal Maven Webapp-1.0.war', 
-                       type: 'war'
-                    ]
-               ], 
-               credentialsId: 'nexus3', 
-               groupId: 'com.web.cal', 
-               nexusUrl: 'http://3.17.161.88:8081', 
-               nexusVersion: 'nexus3', 
-               protocol: 'http', 
-               repository: 'maven-nexus', 
-               version: '1.0'
+                echo ' Pushing artifact to Nexus repo'
+                sh 'cd /var/lib/jenkins/workspace/project/'
+                sh 'mvn deploy   nexus:nexus'
             }
         }
      }
