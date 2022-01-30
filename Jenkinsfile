@@ -30,6 +30,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
+     /*   
         stage('Deploy to Nexus') {
             steps {
                 echo ' Pushing artifact to Nexus repo'
@@ -37,6 +38,7 @@ pipeline {
                 sh 'mvn deploy'
             }
         }
+     */
 
     }
 }
