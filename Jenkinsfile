@@ -37,7 +37,9 @@ pipeline {
             steps {
                 echo ' Pushing artifact to Nexus repo'
                 sh 'cd /var/lib/jenkins/workspace/project/'
-                sh 'mvn foo:bar deploy   nexus:nexus'
+                withNexusEnv('nexus'){
+                sh 'mvn deploy   nexus:nexus'
+                }
             }
         }
      }
